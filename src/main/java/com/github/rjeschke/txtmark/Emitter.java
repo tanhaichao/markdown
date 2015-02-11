@@ -127,7 +127,7 @@ public class Emitter {
 		else {
 			Block block = root.blocks;
 			while (block != null) {
-				this.emit(out, block);
+				emit(out, block);
 				block = block.next;
 			}
 		}
@@ -574,10 +574,11 @@ public class Emitter {
 					if (a < b) {
 						while (in.charAt(b - 1) == ' ')
 							b--;
-						this.config.decorator.openCodeSpan(out);
+						// this.config.decorator.openCodeSpan(out);
 						// Utils.appendCode(out, in, a, b);
-						this.codeAppendCode(mt, out, in, a, b);
-						this.config.decorator.closeCodeSpan(out);
+						String in2 = in.substring(a, b);
+						this.codeAppendCode(mt, out, in2);
+						// this.config.decorator.closeCodeSpan(out);
 					}
 				}
 				else {
@@ -667,8 +668,11 @@ public class Emitter {
 		return -1;
 	}
 
-	protected void codeAppendCode(MarkToken mt, final StringBuilder out, final String in, final int start, final int end) {
-		Utils.appendCode(out, in, start, end);
+	protected void codeAppendCode(MarkToken mt, final StringBuilder out, final String in) {
+		this.config.decorator.openCodeSpan(out);
+		Utils.appendCode(out, in, 0, in.length());
+		// this.codeAppendCode(mt, out, in, a, b);
+		this.config.decorator.closeCodeSpan(out);
 	}
 
 	/**
@@ -887,7 +891,7 @@ public class Emitter {
 	 * @param meta
 	 *            Meta information.
 	 */
-	private void emitCodeLines(final StringBuilder out, final Line lines, final String meta, final boolean removeIndent) {
+	protected void emitCodeLines(final StringBuilder out, final Line lines, final String meta, final boolean removeIndent) {
 		Line line = lines;
 		if (this.config.codeBlockEmitter != null) {
 			final ArrayList<String> list = new ArrayList<String>();
