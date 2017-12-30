@@ -16,9 +16,9 @@
 	</parent>
 
 	<scm>
-		<url>https://github.com/tanhaichao/markdown4j</url>
-		<connection>scm:svn:https://github.com/tanhaichao/markdown4j/trunk</connection>
-		<developerConnection>scm:svn:https://github.com/tanhaichao/markdown4j/trunk</developerConnection>
+		<url>https://github.com/tanhaichao/markdown</url>
+		<connection>scm:svn:https://github.com/tanhaichao/markdown/trunk</connection>
+		<developerConnection>scm:svn:https://github.com/tanhaichao/markdown/trunk</developerConnection>
 	</scm>
 
 	<issueManagement>
