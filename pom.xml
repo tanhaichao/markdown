@@ -7,7 +7,7 @@
 	<name>markdown4j</name>
 	<description>markdown4j</description>
 	<url>http://leopard.io/</url>
-	<inceptionYear>2014</inceptionYear>
+	<inceptionYear>2018</inceptionYear>
 
 	<parent>
 		<groupId>io.leopard.depend</groupId>
@@ -23,6 +23,6 @@
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/tanhaichao/leopard/issues</url>
+		<url>https://github.com/tanhaichao/markdown/issues</url>
 	</issueManagement>
 </project>
